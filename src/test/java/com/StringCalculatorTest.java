@@ -23,4 +23,10 @@ public class StringCalculatorTest {
         assertEquals(27, this.object.add("10,2,3,5,7"));
     }
 
+    @Test 
+    public void test3 () {
+        assertEquals(6, this.object.add("1\n2,3"));
+        assertEquals(16, this.object.add("2,1\n3,4\n6"));
+    }
+
 }
