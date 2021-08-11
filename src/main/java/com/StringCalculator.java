@@ -14,7 +14,10 @@ public class StringCalculator {
         String []parts = input.split(",");
         
         for ( String st : parts ) {
-            count += Integer.parseInt(st);
+            String []part = st.split("\n");
+            for (String i : part) {
+                count += Integer.parseInt(i);
+            } 
         }
 
         return count;
