@@ -29,4 +29,10 @@ public class StringCalculatorTest {
         assertEquals(16, this.object.add("2,1\n3,4\n6"));
     }
 
+    @Test 
+    public void test4 () {
+        assertEquals(3, this.object.add("//;\n1;2"));
+        assertEquals(15, this.object.add("//;\n3;2\n4\n1;5"));
+    }
+
 }
