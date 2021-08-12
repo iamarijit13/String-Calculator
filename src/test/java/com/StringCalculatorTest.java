@@ -67,7 +67,13 @@ public class StringCalculatorTest {
     @Test 
     public void test9 () {
         assertEquals(6, this.object.add("//[***]\n1***2***3"));
-        assertEquals(12, this.object.add("//[***]\n1***2***3**6"));
+        assertEquals(12, this.object.add("//[***]\n1***2***3***6"));
+    }
+
+    @Test 
+    public void test10 () {
+        assertEquals(6, this.object.add("//[*][%]\n1*2%3"));
+        assertEquals(11, this.object.add("//[*][%]\n1*2%3*1*4"));
     }
 
 }
