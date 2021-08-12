@@ -64,4 +64,10 @@ public class StringCalculatorTest {
         assertEquals(12, this.object.add("//;\n3054;2\n4\n1;5"));
     }
 
+    @Test 
+    public void test9 () {
+        assertEquals(6, this.object.add("//[***]\n1***2***3"));
+        assertEquals(12, this.object.add("//[***]\n1***2***3**6"));
+    }
+
 }
