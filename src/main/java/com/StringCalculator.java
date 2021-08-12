@@ -15,12 +15,13 @@ public class StringCalculator {
     }
 
     public void delimiterFinder () {
-    
+        int i;
         Vector v = new Vector();
-
         char[] ch = this.in.toCharArray();
-
-        this.de = String.valueOf(ch[2]);
+        for (i = 3; ch[i] != ']'; i++) {
+            v.add(ch[i]);
+        }
+        this.de = String.valueOf(v);
     }
 
     public int add (String input) {
