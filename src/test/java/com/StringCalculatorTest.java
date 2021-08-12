@@ -55,7 +55,7 @@ public class StringCalculatorTest {
         assertEquals(1, ob.getCalledCount());
         ob.add("//;\n1;2");
         ob.add("//;\n-3;2\n4\n-1;5");
-        assertEquals(2, ob.getCalledCount());
+        assertEquals(3, ob.getCalledCount());
     }
 
 }
