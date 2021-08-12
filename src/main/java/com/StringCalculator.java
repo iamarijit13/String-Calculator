@@ -17,12 +17,13 @@ public class StringCalculator {
 
         char[] ch = this.in.toCharArray();
 
-        this.de = String.valueOf(ch[3]);
+        this.de = String.valueOf(ch[2]);
     }
 
     public int add (String input) {
         int count = 0;
         this.in = input;
+        Vector<Integer> v = new Vector<Integer>(10);
 
         if (input.isEmpty()) {
             return count;
@@ -38,10 +39,18 @@ public class StringCalculator {
                 } catch(NumberFormatException e) {
                     continue;
                 }
+                if (Integer.parseInt(i) < 0) {
+                    v.add(Integer.parseInt(i));
+                    continue;
+                }
                 count += Integer.parseInt(i);
             } 
         }
 
+        if (v.size() > 0) {
+            System.out.print("Negative numbers not allowed: " + v);
+            return -1;
+        }
         return count;
     }
 }
