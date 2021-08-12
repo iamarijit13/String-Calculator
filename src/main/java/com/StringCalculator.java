@@ -4,7 +4,7 @@ package com;
 import java.util.*;
 
 public class StringCalculator {
-    private String in, de;
+    private String in, de, de1;
     private int invoked;
 
     public StringCalculator () {
@@ -17,11 +17,16 @@ public class StringCalculator {
     public void delimiterFinder () {
         int i;
         Vector v = new Vector();
+        Vector v1 = new Vector();
         char[] ch = this.in.toCharArray();
         for (i = 3; ch[i] != ']'; i++) {
             v.add(ch[i]);
         }
+        for (i = i+=2; ch[i] != ']'; i++) {
+            v1.add(ch[i]);
+        }
         this.de = String.valueOf(v);
+        this.de1 = String.valueOf(v1);
     }
 
     public int add (String input) {
@@ -36,23 +41,26 @@ public class StringCalculator {
         
         String []parts = input.split(this.de);
         
-        for ( String st : parts ) {
-            String []part = st.split("\n");
-            for (String i : part) {
-                try {
-                    Integer.parseInt(i);
-                } catch(NumberFormatException e) {
-                    continue;
+        for ( String i : parts) {
+            String []par = i.split(this.de1);
+            for (String k : par) {
+                String []part = k.split("\n");
+                for ( String j : part) {
+                    try {
+                        Integer.parseInt(j);
+                    } catch(NumberFormatException e) {
+                        continue;
+                    }
+                    if (Integer.parseInt(j) < 0) {
+                        v.add(Integer.parseInt(j));
+                        continue;
+                    }
+                    if(Integer.parseInt(j) > 1000) {
+                        continue;
+                    }
+                    count += Integer.parseInt(j);
                 }
-                if (Integer.parseInt(i) < 0) {
-                    v.add(Integer.parseInt(i));
-                    continue;
-                }
-                if(Integer.parseInt(i) > 1000) {
-                    continue;
-                }
-                count += Integer.parseInt(i);
-            } 
+            }
         }
 
         if (v.size() > 0) {
