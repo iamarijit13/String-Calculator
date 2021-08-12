@@ -5,10 +5,13 @@ import java.util.*;
 
 public class StringCalculator {
     private String in, de;
+    private int invoked;
 
     public StringCalculator () {
-        in = new String();
-        de = new String();
+        this.in = new String();
+        this.de = new String();
+        this.invoked = 0;
+
     }
 
     public void delimiterFinder () {
@@ -21,6 +24,7 @@ public class StringCalculator {
     }
 
     public int add (String input) {
+        this.invoked++;
         int count = 0;
         this.in = input;
         Vector<Integer> v = new Vector<Integer>(10);
@@ -52,5 +56,9 @@ public class StringCalculator {
             return -1;
         }
         return count;
+    }
+
+    public int getCalledCount() {
+        return this.invoked;
     }
 }
