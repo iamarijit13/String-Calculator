@@ -47,6 +47,9 @@ public class StringCalculator {
                     v.add(Integer.parseInt(i));
                     continue;
                 }
+                if(Integer.parseInt(i) > 1000) {
+                    continue;
+                }
                 count += Integer.parseInt(i);
             } 
         }
