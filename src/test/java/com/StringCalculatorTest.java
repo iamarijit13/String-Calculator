@@ -58,4 +58,10 @@ public class StringCalculatorTest {
         assertEquals(3, ob.getCalledCount());
     }
 
+    @Test 
+    public void test8 () {
+        assertEquals(11, this.object.add("//;\n1010;2;9"));
+        assertEquals(12, this.object.add("//;\n3054;2\n4\n1;5"));
+    }
+
 }
