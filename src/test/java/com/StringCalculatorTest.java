@@ -35,4 +35,10 @@ public class StringCalculatorTest {
         assertEquals(15, this.object.add("//;\n3;2\n4\n1;5"));
     }
 
+    @Test 
+    public void test5 () {
+        assertEquals(-1, this.object.add("//;\n-1;2"));
+        assertEquals(15, this.object.add("//;\n3;2\n4\n-1;5"));
+    }
+
 }
